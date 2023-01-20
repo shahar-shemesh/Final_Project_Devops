@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JSP and JavaScript Timezone Example</title>
+<title>JSP Timezone   - Devops Final Project</title>
 </head>
 <body>
 
