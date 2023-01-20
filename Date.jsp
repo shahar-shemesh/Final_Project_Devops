@@ -3,34 +3,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JSP Timezone Example</title>
+<title>JSP and JavaScript Timezone Example</title>
 </head>
 <body>
 
 <h1>Current Date and Time in Different Time Zones</h1>
 
-<%
-    java.util.Calendar cal = java.util.Calendar.getInstance();
-
-    // Set time zone to UTC
-    java.util.TimeZone utcTZ = java.util.TimeZone.getTimeZone("UTC");
-    cal.setTimeZone(utcTZ);
-%>
-<p>UTC: <%= cal.getTime() %></p>
+<p id="UTC"></p>
+<p id="EST"></p>
+<p id="IST"></p>
 
 <%
-    // Set time zone to EST
-    java.util.TimeZone estTZ = java.util.TimeZone.getTimeZone("EST");
-    cal.setTimeZone(estTZ);
+    java.util.Calendar utcCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+    java.util.Calendar estCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("EST"));
+    java.util.Calendar istCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("IST"));
+    
+    java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+    String utcDate = dateFormat.format(utcCalendar.getTime());
+    String estDate = dateFormat.format(estCalendar.getTime());
+    String istDate = dateFormat.format(istCalendar.getTime());
 %>
-<p>EST: <%= cal.getTime() %></p>
 
-<%
-    // Set time zone to IST
-    java.util.TimeZone istTZ = java.util.TimeZone.getTimeZone("IST");
-    cal.setTimeZone(istTZ);
-%>
-<p>IST: <%= cal.getTime() %></p>
+<script>
+    var utc = new Date("<%= utcDate %>");
+    var est = new Date("<%= estDate %>");
+    var ist = new Date("<%= istDate %>");
 
+    var options = { timeZone: 'UTC', timeZoneName: 'short' };
+    document.getElementById("UTC").innerHTML = "UTC: " + utc.toLocaleString('en-US', options);
+
+    options = { timeZone: 'America/New_York', timeZoneName: 'short' };
+    document.getElementById("EST").innerHTML = "EST: " + est.toLocaleString('en-US', options);
+
+    options = { timeZone: 'Asia/Kolkata', timeZoneName: 'short' };
+    document.getElementById("IST").innerHTML = "IST: " + ist.toLocaleString('en-US', options);
+</script>
 </body>
 </html>
