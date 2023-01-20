@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Current Date and Time in Different Time Zones</h1>
+<h1>in Different Time Zones</h1>
 
 <p id="UTC"></p>
 <p id="EST"></p>
