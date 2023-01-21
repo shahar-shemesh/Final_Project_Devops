@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Timezone   - Devops Final Project</title>
+<title> Timez4one   - Devops Final Project</title>
 </head>
 <body>
 
