@@ -19,7 +19,7 @@
     java.util.Calendar istCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("IST"));
     
     java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-    Sting utcDate = dateFormat.format(utcCalendar.getTime());
+    String utcDate = dateFormat.format(utcCalendar.getTime());
     String estDate = dateFormat.format(estCalendar.getTime());
     String istDate = dateFormat.format(istCalendar.getTime());
 %>
