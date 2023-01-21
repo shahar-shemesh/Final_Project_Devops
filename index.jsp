@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>in SHAHAR Time Zones</h1>
+<h1>in 8888 Time Zones</h1>
 
 <p id="UTC"></p>
 <p id="EST"></p>
