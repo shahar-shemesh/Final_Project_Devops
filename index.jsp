@@ -1,25 +1,42 @@
-<%@ page errorPage="error.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-    <body>
-        <H1><center>Result for <%=request.getParameter("a1")%></center></H1>
-        <%
-            String num1=request.getParameter("t1");  
-            String num2=request.getParameter("t2");  
-  
-            int i=Integer.parseInt(num1);  
-            int j=Integer.parseInt(num2);  
+<head>
+<title> Timez4one   - Devops Final Project</title>
+</head>
+<body>
 
-            int k=0;
-            String str=request.getParameter("a1");
-            if(str.equals("add"))
-                k=i+j;
-            if(str.equals("sub"))
-                k=i-j;
-            if(str.equals("mul"))
-                k=i*j;
-            if(str.equals("div"))
-                k=i/j;
-        %>
-        Result is: <%=k%>
-    </body>
+<h1>in 8888 Time Zones</h1>
+
+<p id="UTC"></p>
+<p id="EST"></p>
+<p id="IST"></p>
+
+<%
+    java.util.Calendar utcCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+    java.util.Calendar estCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("EST"));
+    java.util.Calendar istCalendar = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("IST"));
+    
+    java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+    String utcDate = dateFormat.format(utcCalendar.getTime());
+    String estDate = dateFormat.format(estCalendar.getTime());
+    String istDate = dateFormat.format(istCalendar.getTime());
+%>
+
+<script>
+    var utc = new Date("<%= utcDate %>");
+    var est = new Date("<%= estDate %>");
+    var ist = new Date("<%= istDate %>");
+
+    var options = { timeZone: 'UTC', timeZoneName: 'short' };
+    document.getElementById("UTC").innerHTML = "UTC: " + utc.toLocaleString('en-US', options);
+
+    options = { timeZone: 'America/New_York', timeZoneName: 'short' };
+    document.getElementById("EST").innerHTML = "EST: " + est.toLocaleString('en-US', options);
+
+    options = { timeZone: 'Asia/Kolkata', timeZoneName: 'short' };
+    document.getElementById("IST").innerHTML = "IST: " + ist.toLocaleString('en-US', options);
+</script>
+</body>
 </html>
