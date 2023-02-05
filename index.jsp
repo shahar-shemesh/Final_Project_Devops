@@ -10,7 +10,7 @@
 	<form method="post" action="result.jsp">
 		<fieldset style="margin-left: auto; margin-right: auto; width: 40%; border: 10px solid #73AD21; font-family: Arial, Helvetica, sans-serif; padding: 25px 50px 75px 100px;">
 			<h1>
-				<font size=8 face="Arial">Mathematical Operation</font>
+				<font size=8 face="Arial">MAAAthematical Operation</font>
 			</h1>
 			<hr>
 			<input type="radio" name="a1" value="Addition" checked>Addition</input><br>
