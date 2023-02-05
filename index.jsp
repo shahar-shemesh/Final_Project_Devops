@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Mathematical Operation</title>
+<title>MMathematical Operation</title>
 </head>
 <body>
 	<form method="post" action="result.jsp">
@@ -13,7 +13,7 @@
 				<font size=8 face="Arial">Mathematical Operation</font>
 			</h1>
 			<hr>
-			<iput type="radio" name="a1" value="Addition" checked>Addition</input><br>
+			<input type="radio" name="a1" value="Addition" checked>Addition</input><br>
 			<input type="radio" name="a1" value="Subtraction">Subtraction</input><br>
 			<input type="radio" name="a1" value="Multiplication">Multiplication</input><br>
 			<input type="radio" name="a1" value="Division">Division</input><br>
