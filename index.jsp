@@ -13,7 +13,7 @@
 				<font size=8 face="Arial">Mathematical Operation</font>
 			</h1>
 			<hr>
-			<input type="radio" name="a1" value="Addition" checked>Addition</input><br>
+			<iput type="radio" name="a1" value="Addition" checked>Addition</input><br>
 			<input type="radio" name="a1" value="Subtraction">Subtraction</input><br>
 			<input type="radio" name="a1" value="Multiplication">Multiplication</input><br>
 			<input type="radio" name="a1" value="Division">Division</input><br>
